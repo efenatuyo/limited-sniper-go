@@ -72,7 +72,6 @@ func main_v1(config Config, sniper Sniper) {
 	req := fasthttp.AcquireRequest()
 	req.SetRequestURI("https://catalog.roblox.com/v1/catalog/items/details")
 	req.Header.SetCookie(".ROBLOSECURITY", config.Cookie)
-	req.Header.Add("Accept-Encoding", "gzip, deflate")
 	for {
 		for _, items := range split_list(config.Items.List) {
 			if len(items) > 0 {
